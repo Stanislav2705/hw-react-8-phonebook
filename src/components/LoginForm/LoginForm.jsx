@@ -25,7 +25,7 @@ const validationSchema = yup.object().shape({
     .required('Please fill in the password'),
 });
 
-export const RegisterForm = () => {
+export const LoginForm = () => {
   const dispatch = useDispatch();
   const { error } = useAuth();
 

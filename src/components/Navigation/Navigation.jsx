@@ -1,9 +1,9 @@
 import { useAuth } from "hooks/useAuth";
-import { Link } from "react-router-dom";
+import { Link } from "./Navigation.styles";
 
 
 export default function Navigation() {
-  const { isLoggedIn } = useAuth;
+  const { isLoggedIn } = useAuth();
 
   return (
     <nav>

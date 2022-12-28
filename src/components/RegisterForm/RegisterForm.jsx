@@ -1,8 +1,11 @@
-import { Formik } from 'formik';
+import { Field, Form, Formik } from 'formik';
 import * as yup from 'yup';
+
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operation';
+
 import { useAuth } from 'hooks';
+import ErrorForm from 'components/ErrorForm/ErrorForm';
 
 const initialValues = {
   name: '',
@@ -32,7 +35,7 @@ const validationSchema = yup.object().shape({
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const error = useAuth();
+  const {error} = useAuth();
 
   const handleSubmit = values => {
     dispatch(register(values));
@@ -44,26 +47,29 @@ export const RegisterForm = () => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <form>
+      <Form>
         <label>
           Username
-          <input type='text' name='name'/>
+          <Field type='text' name='name'/>
         </label>
+        <ErrorForm name='name'/>
 
         <label>
           Email
-          <input type='email' name='email'/>
+          <Field type='email' name='email'/>
         </label>
+        <ErrorForm name='email'/>
 
         <label>
           Password
-          <input type='password' name='password'/>
+          <Field type='password' name='password'/>
         </label>
+        <ErrorForm name='password'/>
 
         {error && <div>{error}</div>}
 
         <button type='submit'>Register</button>
-      </form>
+      </Form>
     </Formik>
   )
 }
