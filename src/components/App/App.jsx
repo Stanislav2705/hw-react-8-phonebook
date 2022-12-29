@@ -25,7 +25,7 @@ export default function App() {
     dispatch(refreshUser())
   }, [dispatch])
 
-  return isRefreshing ? (<Loader/>) : (
+  return isRefreshing ? (<Loader height='100vh'/>) : (
     <Routes>
       <Route path='/' element={<SharedLayout/>}>
         <Route index element={<HomePage />} />
