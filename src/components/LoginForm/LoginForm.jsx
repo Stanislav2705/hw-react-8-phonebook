@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operation';
 
 import { useAuth } from 'hooks';
+import { FormStyled, Input, Label, StyledButton } from 'shared/FormikStyle/FormikStyle';
 
 const initialValues = {
   email: '',
@@ -39,21 +40,21 @@ export const LoginForm = () => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <form>
-        <label>
+      <FormStyled>
+        <Label>
           Email
-          <input type='email' name='email'/>
-        </label>
+          <Input type='email' name='email'/>
+        </Label>
 
-        <label>
+        <Label>
           Password
-          <input type='password' name='password'/>
-        </label>
+          <Input type='password' name='password'/>
+        </Label>
 
         {error && <div>{error}</div>}
 
-        <button type='submit'>Register</button>
-      </form>
+        <StyledButton type='submit'>Register</StyledButton>
+      </FormStyled>
     </Formik>
   )
 }

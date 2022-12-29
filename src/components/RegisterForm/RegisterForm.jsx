@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 
 import { useDispatch } from 'react-redux';
@@ -6,6 +6,7 @@ import { register } from 'redux/auth/operation';
 
 import { useAuth } from 'hooks';
 import ErrorForm from 'components/ErrorForm/ErrorForm';
+import { FormStyled, Input, Label, StyledButton } from 'shared/FormikStyle/FormikStyle';
 
 const initialValues = {
   name: '',
@@ -33,7 +34,7 @@ const validationSchema = yup.object().shape({
     .required('Please fill in the password'),
 });
 
-export const RegisterForm = () => {
+export default function RegisterForm() {
   const dispatch = useDispatch();
   const {error} = useAuth();
 
@@ -47,29 +48,29 @@ export const RegisterForm = () => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <label>
+      <FormStyled>
+        <Label>
           Username
-          <Field type='text' name='name'/>
-        </label>
+          <Input type='text' name='name'/>
+        </Label>
         <ErrorForm name='name'/>
 
-        <label>
+        <Label>
           Email
-          <Field type='email' name='email'/>
-        </label>
+          <Input type='email' name='email'/>
+        </Label>
         <ErrorForm name='email'/>
 
-        <label>
+        <Label>
           Password
-          <Field type='password' name='password'/>
-        </label>
+          <Input type='password' name='password'/>
+        </Label>
         <ErrorForm name='password'/>
 
         {error && <div>{error}</div>}
 
-        <button type='submit'>Register</button>
-      </Form>
+        <StyledButton type='submit'>Register</StyledButton>
+      </FormStyled>
     </Formik>
   )
 }

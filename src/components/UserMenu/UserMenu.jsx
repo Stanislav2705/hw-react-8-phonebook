@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux"
 import { useAuth } from "hooks";
 import Box from "shared/Box/Box";
 import { logOut } from "redux/auth/operation";
+import { Button } from "shared/Button/Button.styles";
+import { UserName } from "./UserMenu.styles";
 
 
 export default function UserMenu() {
@@ -13,8 +15,8 @@ export default function UserMenu() {
 
   return (
     <Box display='flex' alignItems='center' gridGap={4}>
-      <h1>Welcome, {user.name}</h1>
-      <button type="button" onClick={handleLogOut}>Logout</button>
+      <UserName>Welcome, {user.name}</UserName>
+      <Button type="button" onClick={handleLogOut}>Logout</Button>
     </Box>
   )
 }
