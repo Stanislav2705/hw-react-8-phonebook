@@ -56,7 +56,7 @@ export const LoginForm = () => {
 
         {error && <div>{error}</div>}
 
-        <StyledButton type='submit'>Register</StyledButton>
+        <StyledButton type='submit'>Log In</StyledButton>
       </FormStyled>
     </Formik>
   )

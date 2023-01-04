@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 export const ErrorText = styled.p`
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2px;
-  border-radius: 1px;
-  width: 200px;
-  color: white;
-  background-color: red;
+  margin: 0px auto;
+  /* margin-right: auto; */
+  padding: 0px;
+  /* border-radius: 1px; */
+  width: 300px;
+  color: red;
+  /* background-color: red; */
 `

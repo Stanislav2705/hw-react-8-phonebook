@@ -5,8 +5,8 @@ export const theme = {
     white: '#fff',
     text: '#2a2a2a',
     primary: '#ffa500',
-    secondary: '#13c2c2',
-    error: '#f87e42',
+    secondary: '#ffa500',
+    error: '#ff0000',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fontSizes: {

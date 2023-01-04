@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Message = styled.p`
-  font-weight: 500;
-  padding: 4px;
-  border-radius: 4px;
-  background-color: #13c2c2;
-  color: white;
+  font-weight: ${p => p.theme.fontWeights.semibold};
+  padding: ${p => p.theme.space[3]}px;
+  border-radius: ${p => p.theme.radii.normal};
+  background-color: ${p => p.theme.colors.secondary};
+  color: ${p => p.theme.colors.white};
 `;
 
 export const Error = styled(Message)`
-    background-color: red;
+    background-color: #ff0000;
 `

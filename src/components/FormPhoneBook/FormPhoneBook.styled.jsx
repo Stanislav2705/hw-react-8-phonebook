@@ -24,7 +24,7 @@ export const Text = styled.p`
 export const Button = styled.button`
   padding: 8px;
   width: 150px;
-  margin-top: 10px;
+  margin-top: 20px;
   cursor: pointer;
   border-radius: 5px;
   border-color: #ffa500;
@@ -41,6 +41,7 @@ export const Container = styled.div`
   width: 300px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 15px;
   border: 1px solid orange;
   border-radius: 10px;
   background-color: orange;

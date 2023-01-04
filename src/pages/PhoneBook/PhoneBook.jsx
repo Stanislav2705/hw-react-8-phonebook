@@ -10,6 +10,7 @@ import Filter from "../../components/Filter/Filter";
 import { fetchContacts } from "redux/contacts/requests";
 import { Error, Message } from "./Phonebook.styled";
 import Loader from "shared/Loader/Loader";
+import Box from "shared/Box/Box";
 
 export default function Phonebook() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ export default function Phonebook() {
   }, [dispatch]);
 
   return (
-    <div>
+    <Box textAlign='center'>
         <BlockPhone title='Phonebook'>
         <FormPhoneBook />
         </BlockPhone>
@@ -35,6 +36,6 @@ export default function Phonebook() {
         {contacts.length > 0 && <PhoneBookList />}
         {(filter !== "" && contacts.length === 0) && <Message>This name was not found</Message>}
         </BlockPhone>
-    </div>
+    </Box>
   )
 }

@@ -4,6 +4,7 @@ export default function Loader() {
     return (
         <>
         <InfinitySpin
+            display='flex'
             width='200'
             color="#ffa500"
             ariaLabel="infinity-spin-loader"
