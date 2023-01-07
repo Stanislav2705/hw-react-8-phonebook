@@ -7,6 +7,7 @@ import { logIn } from 'redux/auth/operation';
 import { useAuth } from 'hooks';
 import { FormStyled, Input, Label, StyledButton } from 'shared/FormikStyle/FormikStyle';
 import ErrorForm from 'components/ErrorForm/ErrorForm';
+import { Error } from 'shared/Error/Error.styles';
 
 const initialValues = {
   email: '',
@@ -54,7 +55,7 @@ export const LoginForm = () => {
         </Label>
         <ErrorForm name='password'/>
 
-        {error && <div>{error}</div>}
+        {error && <Error>{error}</Error>}
 
         <StyledButton type='submit'>Log In</StyledButton>
       </FormStyled>

@@ -7,6 +7,7 @@ import { register } from 'redux/auth/operation';
 import { useAuth } from 'hooks';
 import ErrorForm from 'components/ErrorForm/ErrorForm';
 import { FormStyled, Input, Label, StyledButton } from 'shared/FormikStyle/FormikStyle';
+import { Error } from 'shared/Error/Error.styles';
 
 const initialValues = {
   name: '',
@@ -40,7 +41,7 @@ export default function RegisterForm() {
 
   const handleSubmit = values => {
     dispatch(register(values));
-  }
+  };
 
   return (
     <Formik
@@ -67,7 +68,7 @@ export default function RegisterForm() {
         </Label>
         <ErrorForm name='password'/>
 
-        {error && <div>{error}</div>}
+        {error && <Error>{error}</Error>}
 
         <StyledButton type='submit'>Register</StyledButton>
       </FormStyled>
