@@ -1,9 +1,11 @@
 import { InfinitySpin } from 'react-loader-spinner';
+import { Load } from './Loader.styled';
 
 export default function Loader() {
     return (
-        <>
-        <InfinitySpin
+      <>
+        <Load>
+          <InfinitySpin
             display='flex'
             width='200'
             color="#ffa500"
@@ -11,7 +13,8 @@ export default function Loader() {
             wrapperStyle={{ justifyContent: 'center' }}
             wrapperClassName=""
             visible={true}
-            />
+          />
+        </Load>
         </>
     )
 }
